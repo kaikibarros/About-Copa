@@ -1,4 +1,5 @@
-const API_URL = "http://127.0.0.1:8000/buscar";
+
+const API_URL = "https://about-copa.onrender.com/docs#";
 
 async function buscar() {
   const query = document.getElementById("query").value;
@@ -49,3 +50,4 @@ async function buscar() {
     console.error(error);
   }
 }
+

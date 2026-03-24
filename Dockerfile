@@ -6,8 +6,8 @@ COPY . .
 
 RUN pip install --no-cache-dir -r requirements.txt
 
-ENV PYTHONPATH="/app"
-EXPOSE 8000
+ENV PYTHONPATH=/app
 
-RUN chmod +x ./start.sh
-CMD ["./start.sh"]
+
+RUN chmod +x start.sh
+CMD ["./start.sh"]  
