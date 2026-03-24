@@ -1,5 +1,4 @@
-
-const API_URL = "https://about-copa.onrender.com/docs#";
+const API_URL = "https://about-copa-production.up.railway.app";
 
 async function buscar() {
   const query = document.getElementById("query").value;
@@ -14,8 +13,9 @@ async function buscar() {
 
   try {
     const response = await fetch(
-      `${API_URL}?query=${encodeURIComponent(query)}`,
+      `${API_URL}/buscar?query=${encodeURIComponent(query)}`
     );
+
     const data = await response.json();
 
     let html = "";
@@ -27,6 +27,7 @@ async function buscar() {
         <div class="embedding">${data.embedding_query.join(", ")}</div>
       </div>
     `;
+
     // Resultados
     data.resultados.forEach((item, index) => {
       html += `
@@ -45,9 +46,9 @@ async function buscar() {
       top: document.body.scrollHeight,
       behavior: "smooth",
     });
+
   } catch (error) {
     resultsDiv.innerHTML = "<p>Erro ao buscar dados.</p>";
     console.error(error);
   }
 }
-

@@ -87,7 +87,7 @@ class SistemaBusca:
         self.vetores = model.encode(chunks)
         
     def gerar_embedding(self, texto):
-        return model.encode([texto])[0]  # ✅ corrigido
+        return model.encode([texto])[0] 
 
     def buscar(self, query, top_n=5):
         emb = self.gerar_embedding(query)
